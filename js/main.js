@@ -1,4 +1,9 @@
 let start = document.getElementById('title__div')
+let words = ['amigos', 'felicidad', 'comida', 'señores', 'numeros', 'celular', 'profesor']
+let randomIndex = Math.floor(Math.random() * words.length);
+let selectedWord = words[randomIndex];
+
+console.log(`Palabra seleccionada: ${selectedWord}`);
 
 start.innerHTML = `
 <h1 class="welcome">Bienvenido, prueba tu suerte</h1>
@@ -33,3 +38,13 @@ start.innerHTML = `
 <button></button>
 </ul>
 `
+document.querySelectorAll('.list-abc button').forEach(button => {
+    button.addEventListener('click', () => {
+    const letra = button.textContent;
+    button.disabled = true;
+    button.style.opacity = '0.5';
+    button.style.background = 'beige'
+
+    console.log(`Letra presionada: '${letra}'`);
+    });
+});
