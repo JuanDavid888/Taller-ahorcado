@@ -1,5 +1,5 @@
 let start = document.getElementById('title__div')
-let words = ['amigos', 'felicidad', 'comida', 'señores', 'numeros', 'celular', 'profesor']
+let words = ['amigos', 'felicidad', 'comida', 'señores', 'numeros', 'celular', 'profesor', 'aguacate', 'medellin', 'afganistan']
 let randomIndex = Math.floor(Math.random() * words.length);
 let selectedWord = words[randomIndex];
 
@@ -35,16 +35,22 @@ start.innerHTML = `
 <button>x</button>
 <button>y</button>
 <button>z</button>
-<button></button>
 </ul>
 `
 document.querySelectorAll('.list-abc button').forEach(button => {
     button.addEventListener('click', () => {
-    const letra = button.textContent;
+    let letra = button.textContent;
     button.disabled = true;
     button.style.opacity = '0.5';
     button.style.background = 'beige'
 
     console.log(`Letra presionada: '${letra}'`);
+
+    if(selectedWord.includes(letra)) {
+        alert('¡Sigue así!');
+    }
+    else {
+        alert('¡Ups, no era!');
+    }
     });
 });
