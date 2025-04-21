@@ -7,6 +7,7 @@ console.log(`Palabra seleccionada: ${selectedWord}`);
 
 start.innerHTML = `
 <h1 class="welcome">Bienvenido, prueba tu suerte</h1>
+<h2 class="word"> - </h2>
 <ul class= "list-abc">
 <button>a</button>
 <button>b</button>
