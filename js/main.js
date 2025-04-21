@@ -7,6 +7,7 @@ start.innerHTML = `
 <button>b</button>
 <button>c</button>
 <button>d</button>
+<button>e</button>
 <button>f</button>
 <button>g</button>
 <button>h</button>
