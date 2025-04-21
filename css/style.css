@@ -1,0 +1,9 @@
+#title__div {
+    /* background: linear-gradient(#f54f32, rgb(60, 146, 245)); */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 800px;
+    text-align: center;
+}
