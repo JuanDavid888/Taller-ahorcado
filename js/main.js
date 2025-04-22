@@ -46,12 +46,19 @@ document.querySelectorAll('.list-abc button').forEach(button => {
     button.style.background = 'beige'
     console.log(`Letra presionada: '${letra}'`);
 
-    if(selectedWord.includes(letra)) {
-        alert('¡Sigue así!');
-    }
-    else {
-        alert('¡Ups, no era!');
+    let correct = false
+    for(let i=0; i < selectedWord.length; i++) {
+        if (selectedWord[i] == letra) {
+            hiddenWord[i] = letra
+            correct = true
+        }
+
+        let fullWord = document.getElementById('word');
+        fullWord.innerHTML = hiddenWord.join(' ');
     }
 
+    if (!correct) {
+        alert('¡Ups, no era!')
+    }
     });
 });
