@@ -60,5 +60,8 @@ document.querySelectorAll('.list-abc button').forEach(button => {
     if (!correct) {
         alert('¡Ups, no era!')
     }
+    if (!hiddenWord.includes('_')) {
+        alert('Ganaste!!') 
+    }
     });
 });
