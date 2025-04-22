@@ -70,7 +70,7 @@ document.querySelectorAll('.list-abc button').forEach(button => {
         alert('Ganaste!!')
         let title = document.getElementById('welcome')
         title.textContent = 'Reiniciando...';
-        title.style.color = 'red'
+        title.style.color = 'white'
 
         setTimeout(() => {
             location.reload();
@@ -80,7 +80,7 @@ document.querySelectorAll('.list-abc button').forEach(button => {
         alert(`¡Perdiste! La palabra era: ${selectedWord}`);
         let title = document.getElementById('welcome')
         title.textContent = 'Reiniciando...';
-        title.style.color = 'red'
+        title.style.color = 'white'
 
         setTimeout(() => {
             location.reload();
