@@ -2,12 +2,12 @@ let start = document.getElementById('title__div')
 let words = ['amigos', 'felicidad', 'comida', 'señores', 'numeros', 'celular', 'profesor', 'aguacate', 'medellin', 'afganistan']
 let randomIndex = Math.floor(Math.random() * words.length);
 let selectedWord = words[randomIndex];
-
+let hiddenWord = selectedWord.split('').map(l => (l === ' ' ? ' ' : '_'));
 console.log(`Palabra seleccionada: ${selectedWord}`);
 
 start.innerHTML = `
 <h1 class="welcome">Bienvenido, prueba tu suerte</h1>
-<h2 class="word"> - </h2>
+<h2 id="word">${hiddenWord.join(' ')}</h2>
 <ul class= "list-abc">
 <button>a</button>
 <button>b</button>
@@ -44,7 +44,6 @@ document.querySelectorAll('.list-abc button').forEach(button => {
     button.disabled = true;
     button.style.opacity = '0.5';
     button.style.background = 'beige'
-
     console.log(`Letra presionada: '${letra}'`);
 
     if(selectedWord.includes(letra)) {
@@ -53,5 +52,6 @@ document.querySelectorAll('.list-abc button').forEach(button => {
     else {
         alert('¡Ups, no era!');
     }
+
     });
 });
