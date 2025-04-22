@@ -1,5 +1,5 @@
 let start = document.getElementById('title__div')
-let words = ['amigos', 'felicidad', 'comida', 'señores', 'numeros', 'celular', 'profesor', 'aguacate', 'medellin', 'afganistan']
+let words = ['amigos', 'felicidad', 'comida', 'señores', 'numeros', 'celular', 'profesor', 'aguacate', 'medellin', 'afganistan', 'hipopotamo', 'revolucionario', 'gritar', 'ventana', 'windows', 'linux', 'apple', 'android', 'venezuela', 'zapato', 'deportivo', 'futbol', 'manzana', 'uva', 'solitario', 'iva', 'puerta', 'locomotora', 'automovil', 'ambulancia', 'venecia', 'silencio', 'javascript', 'python', 'github', 'html', 'css', 'scrum', 'hambre', 'ñoño', 'niños', 'niña', 'niñera', 'vivienda', 'apartamentos', 'cancion', 'microfono']
 let randomIndex = Math.floor(Math.random() * words.length);
 let selectedWord = words[randomIndex];
 let hiddenWord = selectedWord.split('').map(l => (l === ' ' ? ' ' : '_'));
