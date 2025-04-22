@@ -6,7 +6,7 @@ let hiddenWord = selectedWord.split('').map(l => (l === ' ' ? ' ' : '_'));
 console.log(`Palabra seleccionada: ${selectedWord}`);
 
 start.innerHTML = `
-<h1 class="welcome">Bienvenido, prueba tu suerte</h1>
+<h1 id="welcome">Bienvenido, prueba tu suerte</h1>
 <h2 id="word">${hiddenWord.join(' ')}</h2>
 <ul class= "list-abc">
 <button>a</button>
@@ -38,8 +38,11 @@ start.innerHTML = `
 <button>z</button>
 </ul>
 `
+let count = 0
+
 document.querySelectorAll('.list-abc button').forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (event) => {
+    event.preventDefault()
     let letra = button.textContent;
     button.disabled = true;
     button.style.opacity = '0.5';
@@ -47,21 +50,41 @@ document.querySelectorAll('.list-abc button').forEach(button => {
     console.log(`Letra presionada: '${letra}'`);
 
     let correct = false
+
     for(let i=0; i < selectedWord.length; i++) {
         if (selectedWord[i] == letra) {
             hiddenWord[i] = letra
             correct = true
         }
-
-        let fullWord = document.getElementById('word');
-        fullWord.innerHTML = hiddenWord.join(' ');
     }
+    let fullWord = document.getElementById('word');
+    fullWord.innerHTML = hiddenWord.join(' ');
 
     if (!correct) {
         alert('¡Ups, no era!')
+        count++
+        console.log(count);
+        
     }
     if (!hiddenWord.includes('_')) {
-        alert('Ganaste!!') 
+        alert('Ganaste!!')
+        let title = document.getElementById('welcome')
+        title.textContent = 'Reiniciando...';
+        title.style.color = 'red'
+
+        setTimeout(() => {
+            location.reload();
+        }, 3000);
+    }
+    if (count === 8) {
+        alert(`¡Perdiste! La palabra era: ${selectedWord}`);
+        let title = document.getElementById('welcome')
+        title.textContent = 'Reiniciando...';
+        title.style.color = 'red'
+
+        setTimeout(() => {
+            location.reload();
+        }, 3000);
     }
     });
 });

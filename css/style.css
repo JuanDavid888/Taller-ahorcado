@@ -8,9 +8,9 @@
     text-align: center;
 }
 
-.welcome {
+#welcome {
     font-family: sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
     font-weight: bold;
 }
