@@ -1,5 +1,5 @@
 #title__div {
-    /* background: linear-gradient(#f54f32, rgb(60, 146, 245)); */
+    background: linear-gradient(#f54f32, rgb(60, 146, 245));
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -9,6 +9,7 @@
 }
 
 #welcome {
+    color: white;
     font-family: sans-serif;
     font-size: 3rem;
     text-align: center;
